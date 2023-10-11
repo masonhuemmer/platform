@@ -14,7 +14,10 @@ The available commands for execution are listed below.
 
 Main commands:
 
-  preview    Builds and approves a generated plan in Terraform Cloud
+  preview        Used for managing Ephemeral infrastructure
+  tailscale      Used for managing Tailscale (tailscale.com)
+  azuredevops    Used for managing Azure DevOps (dev.azure.com)
+  config         Used for managing Configuration centrally hosted in the Cloud
 
 Global options (use these before the subcommand, if any):
 

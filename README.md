@@ -32,5 +32,5 @@ go run *.go
 ## Build
 
 ```
-GOOS=linux GOARCH=amd64 go build -o v1/platform
+GOOS=$(goos) GOARCH=$(goarch) go build -ldflags="-X 'main.Version=$(platform_version)' -X 'main.Revision=$(platform_revision)'" -o $(Build.BinariesDirectory)/platform
 ```

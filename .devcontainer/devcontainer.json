@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.0/containers/debian
+{
+	"name": "Debian",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Debian version: bullseye, buster
+		// Use bullseye on local arm64/Apple Silicon.
+		"args": { "VARIANT": "bullseye" }
+	},
+	"remoteUser": "vscode",
+	"features": {
+		// GitHub CLI
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		// Node
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "18"
+		},
+		//Terraform
+		"ghcr.io/devcontainers/features/terraform:1": {
+			"version": "latest",
+            "tflint": "none",
+            "terragrunt": "none"
+		},
+		//Azure CLI
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"version": "latest"
+		},
+		//Kubectl, Helm
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest",
+			"helm": "latest",
+			"minikube": "none"
+		},
+		"ghcr.io/devcontainers/features/go:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vsliveshare.vsliveshare",
+				"hashicorp.terraform"
+			]
+		}
+	}
+}

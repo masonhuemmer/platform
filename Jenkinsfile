@@ -22,7 +22,8 @@ pipeline {
                 script {
                     sh '''
                         GOOS=${GOOS} GOARCH=${GOARCH} go build \
-                        -ldflags="-X 'main.Version=${PLATFORM_VERSION}' -X 'main.Revision=${PLATFORM_REVISION}'"
+                        -ldflags="-X 'main.Version=${PLATFORM_VERSION}' -X 'main.Revision=${PLATFORM_REVISION}'" \
+                        -o '${WORKSPACE}/platform'
                     '''
                 }
             }
